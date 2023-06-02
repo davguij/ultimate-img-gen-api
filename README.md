@@ -1,3 +1,23 @@
+# Building the Docker image
+
+`depot build --push -t davguij/ultimate-img-gen-api:{0} --platform linux/amd64 .`
+
+`DOCKER_BUILDKIT=1 docker build -t davguij/ultimate-img-gen-api:{0} .`
+
+# Docker images
+
+- [DEPRECATED] davguij/ultimate-img-gen-api:no-worker -> special version, designed for being spin as a Runpod pod directly, to check models, etc
+- davguij/ultimate-img-gen-api:1 -> first try, no custom model/checkpoint bundled in the Docker image
+- [WORKING] davguij/ultimate-img-gen-api:2 -> only default SD1.5 model bundled in the Docker image; uses CLI arg to load models from Runpod network volume
+
+# Model API names
+
+- "hassaku.safetensors" (Classic)
+- "meina-21.safetensors" (NextGen)
+- "meina-3.safetensors" (NextGen Dark)
+
+---
+
 <div align="center">
 
 <h1>Automatic1111 | Worker</h1>
@@ -7,6 +27,7 @@
 [![Docker Image](https://github.com/runpod-workers/worker-template/actions/workflows/CD-docker_dev.yml/badge.svg)](https://github.com/runpod-workers/worker-template/actions/workflows/CD-docker_dev.yml)
 
 This worker is a RunPod worker that uses the Stable Diffusion model for AI tasks. The worker is built upon the Stable Diffusion WebUI, which is a user interface for Stable Diffusion AI models.
+
 </div>
 
 ## Model
