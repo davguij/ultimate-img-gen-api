@@ -7,14 +7,42 @@
 # Docker images
 
 - [DEPRECATED] davguij/ultimate-img-gen-api:no-worker -> special version, designed for being spin as a Runpod pod directly, to check models, etc
-- davguij/ultimate-img-gen-api:1 -> first try, no custom model/checkpoint bundled in the Docker image
+- [DEPRECATED] davguij/ultimate-img-gen-api:1 -> first try, no custom model/checkpoint bundled in the Docker image
 - [WORKING] davguij/ultimate-img-gen-api:2 -> only default SD1.5 model bundled in the Docker image; uses CLI arg to load models from Runpod network volume
+- [PRODUCTION] davguij/ultimate-img-gen-api:3 -> Sane than 2, but loads also Loras form network volume
+
+# Network Volume Folders
+
+- `/runpod-volume/models` for checkpoints
+- `/runpod-volume/lora` for Loras
 
 # Model API names
+
+## OW
 
 - "hassaku.safetensors" (Classic)
 - "meina-21.safetensors" (NextGen)
 - "meina-3.safetensors" (NextGen Dark)
+- "aom3a1b.safetensors" (Artistic)
+
+## Futa
+
+- [BAD RESULTS] "futagen.safetensors" (Futamany)
+- [PRODUCTION] "aom3a1b.safetensors" -> https://civitai.com/models/9942?modelVersionId=17233 (Oh my Futanari)
+  - To be used with the following Loras:
+    - [PRODUCTION] https://civitai.com/models/7327/esthetic-futanari-trap
+    - [TO DO] https://civitai.com/models/36056/futaveiny
+
+## OnlyBabes
+
+- ✅ "aazrul-2.safetensors" (Aazrul)
+- ✅ "korean-25d.safetensors" (Asian Love) -> https://civitai.com/models/7371/rev-animated
+- ✅ "rev-122.safetensors" (Dramatic)
+- ✅ "babes-20.safetensors" (Elegance) -> https://civitai.com/models/2220?modelVersionId=61372
+- ✅ "perfect-deliberate-4.safetensors" (Perfection) -> https://civitai.com/models/24350/perfectdeliberate
+- ✅ "meina-unreal-3.safetensors" (Smooth)
+- ✅ "babes-11.safetensors" (Spicy)
+- "dreamshaper-631.safetensors" (Surreal)
 
 ---
 
